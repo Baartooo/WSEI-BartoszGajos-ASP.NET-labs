@@ -5,16 +5,15 @@
     const addNewItem = async () => {
         const Name = document.querySelector('#Name').value;
         const Description = document.querySelector('#Description').value;
-        const IsVisible = document.querySelector('#IsVisible').value;
+        const IsVisible = document.querySelector('#IsVisible').checked;
 
         const requestData = {
             Name,
             Description,
             IsVisible
         }
-        console.log(requestData);
 
-        const response = await fetch('api/Adding', {
+        const response = await fetch('/api/adding', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'
@@ -27,6 +26,8 @@
         if (responseJson.success) {
             alertElement.style.display = 'block'
         }
+
+        return responseJson;
     };
 
     window.addEventListener('load', () => {

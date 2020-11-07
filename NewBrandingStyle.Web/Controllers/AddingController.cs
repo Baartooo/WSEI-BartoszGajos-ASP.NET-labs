@@ -11,10 +11,17 @@ namespace ExchangeThings.Web.Controllers
     [Route("api/[controller]")]
     public class AddingController : ControllerBase
     {
-
-        public IActionResult Post(ItemModel item)
+        public AddNewItemResponse Post(ItemModel item)
         {
-            //what should I return?
+            var response = new AddNewItemResponse()
+            {
+                success = true,
+                message = "you did it",
+                addedItem = item
+            };
+
+
+            return response;
         }
 
     }
