@@ -1,6 +1,7 @@
 ﻿(function () {
     const alertElement = document.querySelector("#success-alert");
     const formElement = document.forms[0];
+    //const getAllButton = document.querySelector('.exchanges__get-button');
 
     const addNewItem = async () => {
         const Name = document.querySelector('#Name').value;
@@ -30,12 +31,29 @@
         return responseJson;
     };
 
+    const getAllEntities = async () => {
+
+        const response = fetch('/api/adding', {
+            method: 'GET',
+        });
+        const responseJson = await response.json();
+
+        return responseJson;
+    }
+
     window.addEventListener('load', () => {
         formElement.addEventListener('submit', e => {
             e.preventDefault();
 
             addNewItem().then((res) => console.log(res));
         })
+
+        document.querySelector('.exchanges__get-button').addEventListener('click', () => {
+
+            getAllEntities().then(res => console.log(res));
+        })
+
     })
+
 
 })();

@@ -1,0 +1,15 @@
+﻿.exchanges__get-button {
+    display: flex;
+    justify-content: center;
+    padding: 4px 0;
+    border: 1px solid #000000;
+    transition: 200ms;
+    cursor: pointer;
+    width: 250px;
+}
+
+.exchanges__get-button:hover {
+    background: #414141;
+    color: #ffffff;
+    transition: 300ms;
+}

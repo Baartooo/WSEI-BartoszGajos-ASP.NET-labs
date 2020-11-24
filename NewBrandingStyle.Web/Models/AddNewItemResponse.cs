@@ -7,9 +7,9 @@ namespace ExchangeThings.Web.Models
 {
     public class AddNewItemResponse
     {
-        public bool success { get; set; }
-        public string message { get; set; }
+        public bool IsSuccess { get; set; }
+        public string Message { get; set; }
 
-        public ItemModel addedItem { get; set; }
+        public ItemModel AddedItem { get; set; }
     }
 }

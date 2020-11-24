@@ -35,14 +35,15 @@ namespace ExchangeThings.Web.Controllers
 
             var response = new AddNewItemResponse()
             {
-                success = true,
-                message = "you did it",
-                addedItem = item
+                IsSuccess = true,
+                Message = "you did it",
+                AddedItem = item
             };
-
 
             return response;
         }
 
     }
+
+
 }

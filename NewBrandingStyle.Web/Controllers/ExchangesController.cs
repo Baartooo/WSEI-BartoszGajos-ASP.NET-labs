@@ -1,4 +1,5 @@
-﻿using ExchangeThings.Web.Filters;
+﻿using ExchangeThings.Web.Database;
+using ExchangeThings.Web.Filters;
 using ExchangeThings.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -11,10 +12,25 @@ namespace ExchangeThings.Web.Controllers
     public class ExchangesController : Controller
     {
 
+        private readonly ExchangesDbContext _dbContext;
+
+        public ExchangesController(ExchangesDbContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
+
         [ServiceFilter(typeof(MyCustomActionFilter))]
         public IActionResult Show(string id)
         {
             return View();
+        }
+
+        [HttpGet("ItemsList")]
+        public IActionResult ItemsList()
+        {
+            var items = _dbContext.Items.ToList();
+
+            return Ok(items);
         }
 
         [HttpGet]
