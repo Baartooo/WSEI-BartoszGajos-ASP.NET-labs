@@ -13,3 +13,8 @@
     color: #ffffff;
     transition: 300ms;
 }
+
+.exchanges__list {
+    display: flex;
+    flex-direction: column;
+}

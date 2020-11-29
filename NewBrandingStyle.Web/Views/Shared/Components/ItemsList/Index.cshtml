@@ -1,0 +1,9 @@
+﻿@model List<ExchangeThings.Web.Entities.ItemEntity>
+
+<span>All items:</span>
+<div class="exchanges__list">
+    @foreach (var item in Model)
+    {
+        <span>@item.Name - @item.Description</span>
+    }
+</div>

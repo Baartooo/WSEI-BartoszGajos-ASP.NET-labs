@@ -31,15 +31,7 @@
         return responseJson;
     };
 
-    const getAllEntities = async () => {
-
-        const response = fetch('/api/adding', {
-            method: 'GET',
-        });
-        const responseJson = await response.json();
-
-        return responseJson;
-    }
+    const goToAllEntities = () => window.location.replace('/ItemsList');
 
     window.addEventListener('load', () => {
         formElement.addEventListener('submit', e => {
@@ -48,10 +40,7 @@
             addNewItem().then((res) => console.log(res));
         })
 
-        document.querySelector('.exchanges__get-button').addEventListener('click', () => {
-
-            getAllEntities().then(res => console.log(res));
-        })
+        document.querySelector('.exchanges__get-button').addEventListener('click', goToAllEntities);
 
     })
 
